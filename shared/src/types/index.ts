@@ -259,14 +259,14 @@ export interface EncryptionSettings {
   autoDestructTime?: number; // In seconds
 }
 
-// Export all types as a namespace
+// Export all auth types
+export * from './auth';
+
+// Export type namespace to maintain compatibility with existing code
+// but use as const to avoid TypeScript errors
 export const Types = {
-  User,
-  Message,
-  Conversation,
-  Server,
-  Channel,
-  EventType
-};
+  // This namespace is kept for backwards compatibility
+  // All types should be imported directly instead
+} as const;
 
 export default Types;
