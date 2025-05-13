@@ -1,0 +1,30 @@
+{
+  "name": "chatera-infra",
+  "version": "0.1.0",
+  "description": "Infrastructure as code for the ChatEra platform",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,yaml,json}\"",
+    "terraform:init": "cd terraform && terraform init",
+    "terraform:plan": "cd terraform && terraform plan",
+    "terraform:apply": "cd terraform && terraform apply",
+    "helm:lint": "helm lint ./helm/chatera-chart",
+    "helm:template": "helm template ./helm/chatera-chart",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "chatera-infra": "file:"
+  }
+}
